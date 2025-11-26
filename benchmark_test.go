@@ -123,11 +123,5 @@ func BenchmarkBbolt(b *testing.B) {
 	})
 }
 
-func BenchmarkLotusDB(b *testing.B) {
-	runBenchmark(b, "LotusDB", func(dir string) (store.KVStore, error) {
-		return store.NewLotusDBStore(dir)
-	})
-}
-
 func TestDummy(t *testing.T) {
 }
