@@ -110,3 +110,18 @@ func BenchmarkPebble(b *testing.B) {
 		return store.NewPebbleStore(dir)
 	})
 }
+
+func BenchmarkSQLite(b *testing.B) {
+	runBenchmark(b, "SQLite", func(dir string) (store.KVStore, error) {
+		return store.NewSQLiteStore(dir)
+	})
+}
+
+func BenchmarkBbolt(b *testing.B) {
+	runBenchmark(b, "Bbolt", func(dir string) (store.KVStore, error) {
+		return store.NewBboltStore(dir)
+	})
+}
+
+func TestDummy(t *testing.T) {
+}
